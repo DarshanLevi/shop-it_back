@@ -13,7 +13,7 @@ const { stringify } = require("querystring");
 app.use(express.json());
 
 const allowedOrigins = [
-  'http://localhost:3000',
+  'https://localhost:3000',
   'https://shop-it-front-3.onrender.com/'
 ];
 
