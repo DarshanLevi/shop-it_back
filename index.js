@@ -11,6 +11,7 @@ const cors = require("cors");
 // const { stringify } = require("querystring");
 
 app.use(express.json());
+app.use(cors());
 
 const allowedOrigins = [,
   'https://shop-it-front-3.onrender.com/'
