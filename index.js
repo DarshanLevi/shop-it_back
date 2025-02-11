@@ -13,9 +13,9 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-const allowedOrigins = [,
-  'https://shop-it-front-3.onrender.com/'
-];
+// const allowedOrigins = [,
+//   'https://shop-it-front-3.onrender.com/'
+// ];
 
 
 mongoose.connect(process.env.DB_URL, {
@@ -256,15 +256,15 @@ app.post("/removeproduct", async (req, res) => {
   });
 });
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
 
 
 app.listen(port, (error) => {
