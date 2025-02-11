@@ -6,9 +6,9 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const { error, log } = require("console");
-const { type } = require("os");
-const { stringify } = require("querystring");
+// const { error, log } = require("console");
+// const { type } = require("os");
+// const { stringify } = require("querystring");
 
 app.use(express.json());
 
