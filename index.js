@@ -14,7 +14,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://your-frontend-url.onrender.com'
+  'https://shop-it-front-3.onrender.com/'
 ];
 
 
