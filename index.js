@@ -12,8 +12,7 @@ const cors = require("cors");
 
 app.use(express.json());
 
-const allowedOrigins = [
-  'https://localhost:3000',
+const allowedOrigins = [,
   'https://shop-it-front-3.onrender.com/'
 ];
 
