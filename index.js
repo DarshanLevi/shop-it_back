@@ -11,13 +11,21 @@ const { type } = require("os");
 const { stringify } = require("querystring");
 
 app.use(express.json());
-app.use(cors());
 
-// database connection with mongoDB
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://your-frontend-url.onrender.com'
+];
 
-mongoose.connect(
-  "mongodb+srv://levi:Priyadarshan2@cluster0.sfebu7f.mongodb.net/e-commerce"
-);
+
+mongoose.connect(process.env.DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log("Connected to MongoDB successfully");
+}).catch((err) => {
+  console.log("Failed to connect to MongoDB", err);
+});
 
 // api creation
 
@@ -248,6 +256,15 @@ app.post("/removeproduct", async (req, res) => {
   });
 });
 
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 
 app.listen(port, (error) => {
