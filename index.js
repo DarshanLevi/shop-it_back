@@ -6,12 +6,14 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const dotenv = require("dotenv")
 // const { error, log } = require("console");
 // const { type } = require("os");
 // const { stringify } = require("querystring");
 
 app.use(express.json());
 app.use(cors());
+require("dotenv").config();
 
 // const allowedOrigins = [,
 //   'https://shop-it-front-3.onrender.com/'
