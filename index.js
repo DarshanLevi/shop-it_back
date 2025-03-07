@@ -53,7 +53,7 @@ const upload = multer({ storage: storage });
 
 app.use("/images", express.static("upload/images"));
 
-app.post("/upload", upload.single("product-1"), (req, res) => {
+app.post("/upload", upload.single("products"), (req, res) => {
   res.json({
     success: 1,
     image_url: `http://localhost:${port}/images/${req.file.filename}`,
@@ -62,7 +62,7 @@ app.post("/upload", upload.single("product-1"), (req, res) => {
 
 // schema for creating products
 
-const Product = mongoose.model("product", {
+const Product = mongoose.model("products", {
   id: {
     type: Number,
     required: true,
@@ -99,7 +99,7 @@ const Product = mongoose.model("product", {
 
 // schema creating for user model
 
-const Users = mongoose.model("Users", {
+const Users = mongoose.model("users", {
   name: {
     type: String,
   },
